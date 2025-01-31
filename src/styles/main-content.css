@@ -92,11 +92,11 @@
 }
 
 .playlist-container {
-    height: 68vh;
-    padding-top: 16px;
-    margin: 10px;
-    border-radius: 10px;
-    background-color: #121212;
+  height: 68vh;
+  padding-top: 16px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #121212;
 }
 
 .playlist {
@@ -241,10 +241,10 @@
 }
 
 .grid-container {
-  grid-gap: var(--grid-gap);
+  grid-gap:24px;
   display: grid;
-  grid-template-columns: repeat(var(--column-count), minmax(0, 1fr));
-  min-width: var(--min-container-width);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  min-width: 767px;
 }
 
 .artist-card {
