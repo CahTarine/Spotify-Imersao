@@ -4,10 +4,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to right, rgb(94, 94, 231), rgb(112, 10, 112));
+    background: linear-gradient(to right, rgb(33, 198, 248), rgb(112, 10, 112));
     padding: 15px 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .premium .text {

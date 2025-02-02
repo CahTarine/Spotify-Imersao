@@ -17,7 +17,7 @@ import card14 from '../assets/playlist/14.jpeg';
 import card15 from '../assets/playlist/15.jpeg';
 
 const Main = ({searchResults}) => {
-    const showArtist = searchResults && searchResults.lenght > 0;
+    const showArtist = searchResults && searchResults.length > 0;
     return (
         <div className="playlist-container">
             <div id="result-playlist" className={showArtist ? 'hidden' : ''}>
@@ -152,7 +152,7 @@ const Main = ({searchResults}) => {
                         </section>
                     </div>
                 </div>
-            
+            </div>
 
                 <div id="result-artist" className={!showArtist ? 'hidden' : ''}>
                     <div className="grid-container">
@@ -175,7 +175,6 @@ const Main = ({searchResults}) => {
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 
