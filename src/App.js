@@ -1,18 +1,19 @@
 import './App.css';
+import { useState } from "react";
 import Header from './Header/Header';
 import Sidebar from './Sidebar/Sidebar';
 import Main from './Main/Main';
 import Footer from './Footer/Footer';
-import Script from './Script/script'
 
 function App() {
+  const [searchResults, setSearchResults] = useState([]);
+  
   return (
     <>
-      <Header></Header>
+      <Header onSearchResults={setSearchResults}></Header>
       <Sidebar></Sidebar>
-      <Main></Main>
+      <Main searchResults={searchResults}></Main>
       <Footer></Footer>
-      <Script></Script>
     </>
   )
 };

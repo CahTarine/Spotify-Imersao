@@ -16,10 +16,11 @@ import card13 from '../assets/playlist/13.jpeg';
 import card14 from '../assets/playlist/14.jpeg';
 import card15 from '../assets/playlist/15.jpeg';
 
-const Main = () => {
+const Main = ({searchResults}) => {
+    const showArtist = searchResults && searchResults.lenght > 0;
     return (
         <div className="playlist-container">
-            <div id="result-playlist">
+            <div id="result-playlist" className={showArtist ? 'hidden' : ''}>
                 <div className="playlist">
                     <h1 id="greeting">Boa tarde</h1>
                     <h2 className="session">Navegar por todas as seções</h2>
@@ -153,20 +154,22 @@ const Main = () => {
                 </div>
             
 
-                <div id="result-artist" className="hidden">
+                <div id="result-artist" className={!showArtist ? 'hidden' : ''}>
                     <div className="grid-container">
                         <div className="artist-card" id="">
                             <div className="card-img">
-                                <img id="artist-img" className="artist-img" />
+                                <img id="artist-img" className="artist-img" 
+                                    src={showArtist ? searchResults[0].urlImg : ''} 
+                                    alt={showArtist ? searchResults[0].name : ''} />
                                 <div className="play">
                                     <span className="fa fa-solid fa-play"></span>
                                 </div>
                             </div>
                             <div className="card-text">
-                                <a title="Foo Fighters" className="vst" href="">
-                                    <span className="artist-name" id="artist-name"></span>
-                                    <span className="artist-categorie">Artista</span>
-                                </a>
+                            <a title={showArtist ? searchResults[0].name : ''} className="vst" href=""></a>
+                                <span className="artist-name" id="artist-name">{showArtist ? searchResults[0].name : ''}
+                                </span>
+                                <span className="artist-categorie">Artista</span>
                             </div>
                         </div>
                     </div>
